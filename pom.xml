@@ -35,7 +35,7 @@
 						<password>Siddhu123</password>
 						<applicationName>mulesoft-jenkins-ci-cd2</applicationName>
 						<objectStoreV2>true</objectStoreV2>
-						<region>us-east-2</region>
+						<region>us-east-1</region>
 						<workers>1</workers>
 						<workerType>MICRO</workerType>
 						<environment>Sandbox</environment>
