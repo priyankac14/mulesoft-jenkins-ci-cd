@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="9ddff537-526d-46f8-bd42-e2c8d56c8e1f" basePath="/greetings">
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mulesoft-jenkins-ci-cdFlow" doc:id="53358ac0-4815-4b50-aae7-1d1def426a69" >
+		<http:listener doc:name="Listener" doc:id="122e8231-602d-4f56-a848-ada5cac6e534" config-ref="HTTP_Listener_config" path="/welcome"/>
+		<set-payload value='{&#10;	"status": "Success",&#10;	"message": "Hi Friends-Happy Automation of Build and Deployement"&#10;}' doc:name="Set Payload" doc:id="66152664-7187-416b-b13c-2f25e0c4cfe6" />
+		<logger level="INFO" doc:name="Logger" doc:id="7280d2d9-27ea-4068-bdf6-072ff20fc224" message="#[payload]"/>
+	</flow>
+</mule>
